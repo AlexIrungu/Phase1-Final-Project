@@ -1,0 +1,19 @@
+{
+  "name": "phase1-final-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexIrungu/Phase1-Final-Project.git"
+  },
+  "author": "Alex Irungu",
+  "license": "MIT ",
+  "bugs": {
+    "url": "https://github.com/AlexIrungu/Phase1-Final-Project/issues"
+  },
+  "homepage": "https://github.com/AlexIrungu/Phase1-Final-Project#readme"
+}
