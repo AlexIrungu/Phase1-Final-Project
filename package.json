@@ -1,7 +1,7 @@
 {
   "name": "phase1-final-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Phase-1 Final Project",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/AlexIrungu/Phase1-Final-Project/issues"
   },
-  "homepage": "https://github.com/AlexIrungu/Phase1-Final-Project#readme"
+  "homepage": "https://github.com/AlexIrungu/Phase1-Final-Project#readme",
+  "keywords": [
+    "js",
+    "html",
+    "css"
+  ]
 }
