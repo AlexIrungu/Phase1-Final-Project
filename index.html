@@ -5,9 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Phase-1 Final Project</title>
 </head>
 <body>
+    <div id="error"></div>
+    <form id="login_form">
+        <div class="field">
+        <label>Email address</label>
+        <br>
+        <input id="enter_email" type="text" placeholder="Enter Email"><br><br>
+        </div>
+        <div>
+        <label>Password</label><br>
+        <input type="password"><br><br>
+    </div>
+    <button type="submit" class="btn" value="Submit"></button>
+       
+    </form>
+    
     <!--create nav bar-->
     <nav class="navbar">
         <div class="container-fluid">
@@ -21,7 +36,7 @@
                 </li>
 
             </ul>
-            <form class="d-flex">
+            <form class="flex">
                 <input class="form-control" type="text" placeholder="Search" id="search"/>
                 <button class="btn btn-outline-info" id="searchBtn">Search</button>
 
@@ -30,7 +45,24 @@
         </div>
 
     </nav>
-    <div class="container">
+    <div class="container" id="main-container">
+        <div class="row" id="random-drink">
+            <div class="card col-20">
+                <div class="row">
+                    <div class="col-10">
+
+                    </div>
+                    <div class="col-10 card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">dbshvghbv</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
         <div class="drink"></div>
         <button>Get drink</button>
     </div>
