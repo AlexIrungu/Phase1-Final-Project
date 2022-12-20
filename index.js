@@ -3,7 +3,7 @@
  const RANDOM_DRINK = 'https://api.openbrewerydb.org/breweries/random'
 
 //to listen to DOM loading event
-document.addEventListener('DOMContentLoaded', () => {})
+document.addEventListener('DOMContentLoaded', () => {
     //create random drink element
     const createRandomDrink = (type, title, city) => {
         //creating card div
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {})
              const title = drinkData.name
              const city = drinkData.city
              const drinkElement = createRandomDrink(type, title, city)
-             document.getElementById('random-drink').appendChild(drinkElement)
+             //document.getElementById('random-drink').appendChild(drinkElement)
             
         })
     }
@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {})
 // }
 
 function appendLoginPage () {
+    
     document.querySelector('body').innerHTML = 
     `<header id="showcase">
     
@@ -168,7 +169,7 @@ function appendLoginPage () {
 appendLoginPage()
 
 function appendHomePage (){
-    document.querySelector('body').innerHTML = ""
+    // document.querySelector('body').innerHTML = ""
     document.querySelector('body').innerHTML = ` 
     <nav class="navbar text-bg-dark">
         <div class="container-fluid">
@@ -190,7 +191,7 @@ function appendHomePage (){
 
         </div>
 
-    </nav>
+    </nav
     <div class="container mt-5" id="main-container">
         <div class="row" id="random-drink">
             
@@ -209,8 +210,13 @@ function appendHomePage (){
         </div>
         <div class="drink"></div>
         <button>Get drink</button>
-       
+        loadRandomDrink()
     </div> `
+    
+
 }
+
+
 //appendHomePage()
 
+})
