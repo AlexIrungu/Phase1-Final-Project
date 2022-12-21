@@ -4,6 +4,10 @@ html{
     font-family: 'Montserrat', sans-serif;
 
 }
+#background{
+    background-image: url(./brew.jpeg);
+      height: 122vh;
+}
 body{
     background-color: rgb(155, 173, 63);
     color: rgb(12, 57, 179);

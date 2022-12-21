@@ -64,6 +64,66 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
     loadRandomDrink()
+
+
+    function brewNew(){
+        fetch("https://api.openbrewerydb.org/breweries")
+        .then((response)=>response.json())
+        .then((datas)=>{
+            datas.map(newsItems=>{
+                console.log(newsItems);
+                const brew_type = document.getElementById('brew_type')
+                brew_type.innerHTML = `
+                <ul>
+                <li>${newsItems.state}</li>
+                <li>${newsItems.name}</li>
+                <li>${newsItems.city}</li>
+                <li>${newsItems.country}</li>
+                <span id="drinking" class = "bg-info" ></span>
+                </ul>
+                
+                `
+                const drinking = document.getElementById('drinking')
+                const Btn= document.getElementById('Btn')
+                Btn.addEventListener('click',()=>{
+                    drinking.textContent= 'Thank you for purchasing'
+                })
+            })
+        })
+
+
+    }
+    brewNew()
+
+    const search = document.getElementById('search')
+    const searchBtn = document.getElementById('searchBtn')
+       
+    searchBtn.addEventListener('click',(e)=>{
+        e.preventDefault()
+        const search = document.getElementById('search')
+        const value = search.value
+        fetch(`https://api.openbrewerydb.org/breweries/autocomplete?query=${value}`)
+        .then((response)=>response.json())
+        .then((data)=>{
+            const brew_type = document.getElementById('brew_type')
+            data.forEach(data=>{
+            brew_type.innerHTML = `
+            <ul>
+            <li>${data.id}</li>
+            <li>${data.name}</li>
+            
+            <span id="drinking" class ="bg-info" ></span>
+            </ul>
+            
+            `
+            const drinking = document.getElementById('drinking')
+            const Btn= document.getElementById('Btn')
+            Btn.addEventListener('click',()=>{
+                drinking.textContent= 'Thank you for purchasing'
+            })
+        })
+        })
+    })
     
 
 //form dom manipulation
@@ -92,25 +152,26 @@ document.addEventListener('DOMContentLoaded', () => {
 function appendLoginPage () {
     
     document.querySelector('body').innerHTML = 
-    `<header id="showcase">
+    // `<header id="showcase">
     
-    <form id="login_form">
-    <div class="field">
-    <label>Email address</label>
-    <br>
-    <input id="enter_email" type="text" placeholder="Enter Email"><br><br>
-    </div>
-    <div>
-    <label>Password</label><br>
-    <input id="enter_password" type="password" placeholder="Enter Password"><br><br>
-    </div>
-    <input id="submit-btn" type="submit"  class="btn text-bg-success" value="Submit"/>
+    // <form id="login_form">
+    // <div class="field">
+    // <label>Email address</label>
+    // <br>
+    // <input id="enter_email" type="text" placeholder="Enter Email"><br><br>
+    // </div>
+    // <div>
+    // <label>Password</label><br>
+    // <input id="enter_password" type="password" placeholder="Enter Password"><br><br>
+    // </div>
+    // <input id="submit-btn" type="submit"  class="btn text-bg-success" value="Submit"/>
    
-    </form>
-    </header>`
+    // </form>
+    // </header>
+    // `
     
-    document.getElementById("submit-btn").addEventListener('click', () => {
-        
+    document.getElementById("submit-btn").addEventListener('click', (e) => {
+                   e.preventDefault
         let mailValue = document.getElementById('enter_email').value
         let passValue = document.getElementById('enter_password').value
         if(mailValue !== "" && passValue !== ""){
@@ -166,55 +227,55 @@ function appendLoginPage () {
 
     })
 }
-appendLoginPage()
+//appendLoginPage()
 
-function appendHomePage (){
-    // document.querySelector('body').innerHTML = ""
-    document.querySelector('body').innerHTML = ` 
-    <nav class="navbar text-bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand text-light">HOME</a>
-            <ul class="navbar-nav me-auto d-flex flex-row">
-                <li class="nav-item me-2">
-                    <a class="nav-link text-light" href="#" id="brew-link">BREW</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="#" id="countries-link">COUNTRIES</a>
-                </li>
+// function appendHomePage (){
+//     // document.querySelector('body').innerHTML = ""
+//     document.querySelector('body').innerHTML = ` 
+//     <nav class="navbar text-bg-dark">
+//         <div class="container-fluid">
+//             <a class="navbar-brand text-light">HOME</a>
+//             <ul class="navbar-nav me-auto d-flex flex-row">
+//                 <li class="nav-item me-2">
+//                     <a class="nav-link text-light" href="#" id="brew-link">BREW</a>
+//                 </li>
+//                 <li class="nav-item">
+//                     <a class="nav-link text-light" href="#" id="countries-link">COUNTRIES</a>
+//                 </li>
 
-            </ul>
-            <form class="d-flex">
-                <input class="form-control" type="text" placeholder="Search" id="search"/>
-                <button class="btn btn-outline-info" id="searchBtn">Search</button>
+//             </ul>
+//             <form class="d-flex">
+//                 <input class="form-control" type="text" placeholder="Search" id="search"/>
+//                 <button class="btn btn-outline-info" id="searchBtn">Search</button>
 
-            </form>
+//             </form>
 
-        </div>
+//         </div>
 
-    </nav
-    <div class="container mt-5" id="main-container">
-        <div class="row" id="random-drink">
+//     </nav
+//     <div class="container mt-5" id="main-container">
+//         <div class="row" id="random-drink">
             
 
-        </div>
-        <div class="row" id="brew-type">
-            <div class="card col-5" >
-                <img src="./brew.jpeg" alt=""/>
-                <h4 class="card-name">Brew</h4>
+//         </div>
+//         <div class="row" id="brew-type">
+//             <div class="card col-5" >
+//                 <img src="./brew.jpeg" alt=""/>
+//                 <h4 class="card-name">Brew</h4>
 
-            </div>
-        </div>
-        <div class="row" id="drink-countries">
-            <span class="col-2 me-1 mb-1">Kenyan</span>
+//             </div>
+//         </div>
+//         <div class="row" id="drink-countries">
+//             <span class="col-2 me-1 mb-1">Kenyan</span>
 
-        </div>
-        <div class="drink"></div>
-        <button>Get drink</button>
-        loadRandomDrink()
-    </div> `
+//         </div>
+//         <div class="drink"></div>
+//         <button>Get drink</button>
+//         loadRandomDrink()
+//     </div> `
     
 
-}
+// }
 
 
 //appendHomePage()
