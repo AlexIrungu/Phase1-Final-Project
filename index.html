@@ -45,13 +45,17 @@
     
     <nav class="navbar text-bg-dark" >
         <div class="container-fluid">
-            <a class="navbar-brand text-light">HOME</a>
+            <a id="home" href="#" class="me-2">HOME</a>
             <ul class="navbar-nav me-auto d-flex flex-row">
                 <li class="nav-item me-2">
-                    <a class="nav-link text-light" href="#" id="brew-link">BREW</a>
+                    <a id="categories" class="me-2" href="#">CATEGORIES
+                        <ul>
+                            <li id="category"></li>
+                        </ul>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#" id="countries-link">COUNTRIES</a>
+                   <a id="countries" href="#" class="me-2">COUNTRIES</a>
                 </li>
 
             </ul>
@@ -65,14 +69,16 @@
 
     </nav>
     <div class="container mt-5 card" id="main-container">
+        <button id="NEW" >RANDOM</button>
         <div class="row" id="random-drink">
             
 
         </div>
         <div class="row" id="brew_type">
             <div class="card col-5" >
-                <img src="./brew.jpeg" alt=""/>
-                <h4 class="card-name">Brew</h4>
+                <img class="card-img" src="./brew.jpeg" alt=""/>
+                <!-- <h2 id="brews">CATEGORIES</h2> -->
+                <h4 id= "brews" class="card-name">Brew</h4>
 
             </div>
            

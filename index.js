@@ -46,6 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
         //return the cardDiv
         return cardDiv
     }
+
+    
+
+
     //load random drink
     function loadRandomDrink() {
         fetch(RANDOM_DRINK)
@@ -64,13 +68,26 @@ document.addEventListener('DOMContentLoaded', () => {
             
         })
     }
-    loadRandomDrink()
 
+    //load drink categories
+   
+   
+    loadRandomDrink()
+//function that lists the brews
 
     function brewNew(){
-        fetch("https://api.openbrewerydb.org/breweries")
+        
+
+    }
+    brewNew()
+    //calling the function
+    document.querySelector("#NEW").addEventListener('click',()=>{
+        console.log('clicked');
+        fetch("https://api.openbrewerydb.org/breweries/random")
         .then((response)=>response.json())
         .then((datas)=>{
+            const newsItems = datas[0]
+            console.log(newsItems);
             datas.map(newsItems=>{
                 console.log(newsItems);
                 const brew_type = document.getElementById('brew_type')
@@ -84,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </ul>
                 
                 `
+        
                 const drinking = document.getElementById('drinking')
                 const Btn= document.getElementById('Btn')
                 Btn.addEventListener('click',()=>{
@@ -92,10 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         })
 
+    })
+   
 
-    }
-    brewNew()
-
+    //adding a click event to the search button
     const search = document.getElementById('search')
     const searchBtn = document.getElementById('searchBtn')
        
@@ -117,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
             
             `
+            //add a click event
             const drinking = document.getElementById('drinking')
             const Btn= document.getElementById('Btn')
             Btn.addEventListener('click',()=>{
@@ -125,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         })
     })
+    //adding functionality to the landing and home page
     const showcase= document.getElementById('showcase')
     const background= document.getElementById('background')
     const Btnbtn = document.getElementById('submit_btn')
@@ -133,10 +153,29 @@ document.addEventListener('DOMContentLoaded', () => {
         background.style.display = "flex"
         background.removeAttribute('hidden')
         showcase.style.display = "none"
-
     })
 
-
-
-
+    //load category elements
+    
+    const category = document.getElementById('category')
+    const categories = document.getElementById('categories')
+    categories.addEventListener('click',()=>{
+        fetch('https://api.openbrewerydb.org/breweries')
+        .then((response)=>response.json())
+        .then((data)=>{
+            // console.log(data);
+            data.forEach(items=>{
+                // console.log(items);
+                const itemName = items.name
+                // console.log(itemName)
+               
+               const types = document.createElement('li')
+               types.innerHTML = items.name
+               brew_type.appendChild(types)
+               console.log(brew_type);
+            
+            })
+        })
+    })
+    
 })
