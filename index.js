@@ -176,6 +176,31 @@ document.addEventListener('DOMContentLoaded', () => {
             
             })
         })
+
+        
+    })
+
+    const countries = document.getElementById('countries')
+    // const categories = document.getElementById('categories')
+    countries.addEventListener('click',()=>{
+        fetch('https://api.openbrewerydb.org/breweries')
+        .then((response)=>response.json())
+        .then((data)=>{
+            // console.log(data);
+            data.forEach(items=>{
+                // console.log(items);
+                const itemName = items.country
+                // console.log(itemName)
+               
+               const types = document.createElement('li')
+               types.innerHTML = items.country
+               brew_type.appendChild(types)
+            //    console.log(brew_type);
+            
+            })
+        })
+
+        
     })
     
 })
