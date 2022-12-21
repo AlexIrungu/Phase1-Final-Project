@@ -5,6 +5,7 @@
 //to listen to DOM loading event
 document.addEventListener('DOMContentLoaded', () => {
     //create random drink element
+    
     const createRandomDrink = (type, title, city) => {
         //creating card div
         const cardDiv = document.createElement('div')
@@ -124,160 +125,18 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         })
     })
-    
-
-//form dom manipulation
-// document.addEventListener('DOMContentLoaded', () => {
-//     document.querySelector('form').addEventListener('submit', (e) => {
-//         //we console log and the page refreshes. 
-//         //console.log(e)
-//         //we then add a prevent event to remove the default behaviour of the html form
-//         e.preventDefault()
-//         //we console log to check the submit event
-//         console.log(e.target.enter_email.value)
-//     })
-// })
-
-// function handleEmail(email){
-//     //console.log(email)
-//     let p = document.createElement('p')
-//     let btn = document.createElement('button')
-//     btn.textContent = 'x'
-//     p.appendChild(btn)
-//     p.textContent = `${email}`
-//     //console.log(p);
-//     document.querySelector('#email_container').appendChild(p)
-// }
-
-function appendLoginPage () {
-    
-    document.querySelector('body').innerHTML = 
-    // `<header id="showcase">
-    
-    // <form id="login_form">
-    // <div class="field">
-    // <label>Email address</label>
-    // <br>
-    // <input id="enter_email" type="text" placeholder="Enter Email"><br><br>
-    // </div>
-    // <div>
-    // <label>Password</label><br>
-    // <input id="enter_password" type="password" placeholder="Enter Password"><br><br>
-    // </div>
-    // <input id="submit-btn" type="submit"  class="btn text-bg-success" value="Submit"/>
-   
-    // </form>
-    // </header>
-    // `
-    
-    document.getElementById("submit-btn").addEventListener('click', (e) => {
-                   e.preventDefault
-        let mailValue = document.getElementById('enter_email').value
-        let passValue = document.getElementById('enter_password').value
-        if(mailValue !== "" && passValue !== ""){
-            appendHomePage()
-        // document.querySelector('body').innerHTML = ""
-        // document.querySelector('body').innerHTML = ` 
-        // <nav class="navbar text-bg-dark">
-        //     <div class="container-fluid">
-        //         <a class="navbar-brand text-light">HOME</a>
-        //         <ul class="navbar-nav me-auto d-flex flex-row">
-        //             <li class="nav-item me-2">
-        //                 <a class="nav-link text-light" href="#" id="brew-link">BREW</a>
-        //             </li>
-        //             <li class="nav-item">
-        //                 <a class="nav-link text-light" href="#" id="countries-link">COUNTRIES</a>
-        //             </li>
-    
-        //         </ul>
-        //         <form class="d-flex">
-        //             <input class="form-control" type="text" placeholder="Search" id="search"/>
-        //             <button class="btn btn-outline-info" id="searchBtn">Search</button>
-    
-        //         </form>
-    
-        //     </div>
-    
-        // </nav>
-        // <div class="container mt-5" id="main-container">
-        //     <div class="row" id="random-drink">
-                
-    
-        //     </div>
-        //     <div class="row" id="brew-type">
-        //         <div class="card col-5" >
-        //             <img src="./brew.jpeg" alt=""/>
-        //             <h4 class="card-name">Brew</h4>
-    
-        //         </div>
-        //     </div>
-        //     <div class="row" id="drink-countries">
-        //         <span class="col-2 me-1 mb-1">Kenyan</span>
-    
-        //     </div>
-        //     <div class="drink"></div>
-        //     <button>Get drink</button>
-           
-        // </div> `
-    }else if(mailValue === "" || passValue === ""){
-        //document.querySelector('body').innerHTML = 'error'
-        alert("ERROR")
-    }
-
+    const showcase= document.getElementById('showcase')
+    const background= document.getElementById('background')
+    const Btnbtn = document.getElementById('submit_btn')
+    Btnbtn.addEventListener("click",(e)=>{
+        e.preventDefault()
+        background.style.display = "flex"
+        background.removeAttribute('hidden')
+        showcase.style.display = "none"
 
     })
-}
-//appendLoginPage()
-
-// function appendHomePage (){
-//     // document.querySelector('body').innerHTML = ""
-//     document.querySelector('body').innerHTML = ` 
-//     <nav class="navbar text-bg-dark">
-//         <div class="container-fluid">
-//             <a class="navbar-brand text-light">HOME</a>
-//             <ul class="navbar-nav me-auto d-flex flex-row">
-//                 <li class="nav-item me-2">
-//                     <a class="nav-link text-light" href="#" id="brew-link">BREW</a>
-//                 </li>
-//                 <li class="nav-item">
-//                     <a class="nav-link text-light" href="#" id="countries-link">COUNTRIES</a>
-//                 </li>
-
-//             </ul>
-//             <form class="d-flex">
-//                 <input class="form-control" type="text" placeholder="Search" id="search"/>
-//                 <button class="btn btn-outline-info" id="searchBtn">Search</button>
-
-//             </form>
-
-//         </div>
-
-//     </nav
-//     <div class="container mt-5" id="main-container">
-//         <div class="row" id="random-drink">
-            
-
-//         </div>
-//         <div class="row" id="brew-type">
-//             <div class="card col-5" >
-//                 <img src="./brew.jpeg" alt=""/>
-//                 <h4 class="card-name">Brew</h4>
-
-//             </div>
-//         </div>
-//         <div class="row" id="drink-countries">
-//             <span class="col-2 me-1 mb-1">Kenyan</span>
-
-//         </div>
-//         <div class="drink"></div>
-//         <button>Get drink</button>
-//         loadRandomDrink()
-//     </div> `
-    
-
-// }
 
 
-//appendHomePage()
+
 
 })
