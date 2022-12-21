@@ -10,8 +10,8 @@
 }
 
 #background{
-    background-image: url(./brew.jpeg);
-      height: 122vh;
+    background-image: url(./brews.jpg);
+      height: 100vh;
       flex-direction: column;
 }
 

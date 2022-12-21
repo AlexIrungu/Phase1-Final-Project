@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(`https://api.openbrewerydb.org/breweries/autocomplete?query=${value}`)
         .then((response)=>response.json())
         .then((data)=>{
+            
             const brew_type = document.getElementById('brew_type')
             data.forEach(data=>{
             brew_type.innerHTML = `
@@ -170,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // console.log(itemName)
                
                const types = document.createElement('li')
+               types.innerHTML = ""
                types.innerHTML = items.name
                brew_type.appendChild(types)
                console.log(brew_type);
@@ -193,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // console.log(itemName)
                
                const types = document.createElement('li')
+               types.innerHTML = ""
                types.innerHTML = items.country
                brew_type.appendChild(types)
             //    console.log(brew_type);
