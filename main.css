@@ -7,6 +7,8 @@
 #main-container{
     font-family: Tahoma;
     color: black;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 #background{

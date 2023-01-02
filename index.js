@@ -212,5 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
     }
+    logIn()
     
 })
