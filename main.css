@@ -1,55 +1,12 @@
-
- /* html{
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif; 
-}  */
-
 #main-container{
     font-family: Tahoma;
     color: black;
     overflow: hidden;
     overflow-y: scroll;
 }
-
 #background{
     background-image: url(./brews.jpg);
       height: 100vh;
       flex-direction: column;
 }
 
-/* body{
-    background-color: rgb(155, 173, 63);
-    color: rgb(12, 57, 179);
-}
-
-.nav-link {
-    color: rgb(34, 75, 75);
-    display: flex;
-    margin-right: auto;
-    flex: row;
-    flex-direction: column;
-}
-.container{
-    width: 905;
-    max-width: 500px;
-    margin: 0 auto;
-    background-color: rgb(216, 219, 223);
-    border-radius: 8px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-}
-.flex {
-    flex: d-flex;
-}
-/* button{ 
-    margin-top: 10px;
-    width: fit-content;
-    padding: 5px;
-    font-size: 10px;
-    background-color: rgb(23, 28, 29);
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    align-self: flex-end;
-} */ 
