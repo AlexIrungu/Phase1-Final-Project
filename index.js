@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function logIn(){
         logName = document.forms["login_form"]["frame"].value;
         if (logName == ""){
-            alert("Please enter username..")
+            alert("💀Please enter username")
         }
         
     }
