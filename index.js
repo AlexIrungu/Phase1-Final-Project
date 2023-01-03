@@ -252,7 +252,34 @@ Btnbtn.addEventListener("click",(e)=>{
    
 })
 
-  
+let homeBtn = document.getElementById('home')
+homeBtn.addEventListener('click',()=> {
+    //console.log('clicked');
+    let mainContainer = document.getElementById('main-container')
+    mainContainer.innerHTML = `
+    <button id="NEW" >RANDOM</button>
+        <div class="row" id="random-drink">
+            
+
+        </div>
+        <div class="row" id="brew_type">
+            <div class="card col-5" >
+                <img class="card-img" src="./pexels-cottonbro-studio-3171820.jpg" alt=""/>
+                <!-- <h2 id="brews">CATEGORIES</h2> -->
+                <h4 id= "brews" class="card-name">Brew</h4>
+
+            </div>
+           
+        </div>
+        <div class="row" id="drink-countries">
+            <span class="col-2 me-1 mb-1"></span>
+
+        </div>
+        <div class="drink">
+        <button id="Btn">Get drink</button>
+       </div>
+    `
+})
    
       
     
