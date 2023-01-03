@@ -146,16 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
     //adding functionality to the landing and home page
-    const showcase= document.getElementById('showcase')
-    const background= document.getElementById('background')
-    const Btnbtn = document.getElementById('submit_btn')
-    Btnbtn.addEventListener("click",(e)=>{
-        e.preventDefault()
-        background.style.display = "flex"
-        background.removeAttribute('hidden')
-        showcase.style.display = "none"
-    })
-
+    let Btnbtn = document.getElementById('submit_btn')
+    
     //load category elements
     
     const category = document.getElementById('category')
@@ -205,13 +197,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
         
     })
-    function logIn(){
-        logName = document.forms["login_form"]["frame"].value;
-        if (logName == ""){
-            alert("💀Please enter username")
-        }
-        
-    }
-    logIn()
     
+   
+    
+    // form.addEventListener('submit', (e) => {
+       
+    // })
+
+    function checkInputs(){
+        const logName = document.getElementById('frame')
+        const password = document.getElementById('pwd')
+        const form = document.getElementById('login_form')
+        const errorElement = document.getElementById('error')
+    
+        const logNameValue = logName.value
+        const passwordValue = password.value
+    
+    let messages = []
+    if (logNameValue === ''){
+        alert('💀Name is required')}
+       
+    else if (passwordValue.length <= 6){
+        alert('Password must be longer than 6 characters')
+    }
+    else if (passwordValue.length >= 20){
+        alert('Password must be less than 20 characters')
+    }
+    else if (passwordValue === 'password'){
+        alert('Password cannot be password')
+    }
+   else if (logNameValue !== "" && passwordValue !== 'password'){
+        const showcase= document.getElementById('showcase')
+        const background= document.getElementById('background')
+        //const Btnbtn = document.getElementById('submit_btn')
+
+       
+       
+        background.style.display = "flex"
+        background.removeAttribute('hidden')
+        showcase.style.display = "none"
+
+        //console.log('clicked');
+    }
+
+
+}
+Btnbtn.addEventListener("click",(e)=>{
+    e.preventDefault()
+    checkInputs()
+   
+})
+
+  
+   
+      
+    
+    
+
+
 })

@@ -16,19 +16,23 @@
     </div>
     <header id="showcase" >
         <h1>LogIn</h1>
-    <form id="login_form">
+    <form id="login_form" action="/" method="GET" class="form">
+        <!-- <select required="required" name="select">
+            <option value="">option 1</option>
+        </select> -->
         <div class="field">
-        <input id="frame" type="text"  name="frame" required>
+        <input id="frame" type="text" name="frame" required>
         <span></span>
         <label for="username">Email address</label>
+        
         </div>
         <div class="field">
-        <input id="pwd" name="pwd" type="password" required>
+        <input id="pwd" pattern=".{8,}" title="Required at least 8 characters" name="pwd" type="password" required>
         <span></span>
         <label for="password">Password</label>
     </div>
     <div class="pass">Forgot Password?</div>
-    <button onclick="" id="submit_btn" class="btn " >Submit</button>
+    <button  id="submit_btn" class="btn " >Submit</button>
     <div class="signup_lnk">Don't have an account?<a href="#">SignUp</a></div>
        
     </form>
