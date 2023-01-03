@@ -156,6 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('https://api.openbrewerydb.org/breweries')
         .then((response)=>response.json())
         .then((data)=>{
+            let brewery = document.getElementById('brew_type')
+            brewery.innerHTML = ""
             // console.log(data);
             data.forEach(items=>{
                 // console.log(items);
@@ -180,6 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('https://api.openbrewerydb.org/breweries')
         .then((response)=>response.json())
         .then((data)=>{
+            let brewery = document.getElementById('brew_type')
+            brewery.innerHTML = ""
             // console.log(data);
             data.forEach(items=>{
                 // console.log(items);
