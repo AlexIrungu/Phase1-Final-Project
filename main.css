@@ -4,6 +4,28 @@
     overflow: hidden;
     overflow-y: scroll;
 }
+#Btn{
+    border: 1px solid #3498db;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: montserrat;
+    cursor: pointer;
+    margin: 10px;
+    color: #3498db;
+    background: #000;
+}
+#NEW {
+    color: #3498db;
+    background: #000 ;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+#Btn:hover,#NEW:hover {
+    color: #fff;
+}
+
 #background{
     background-image: url(./brews.jpg);
       height: 100vh;
